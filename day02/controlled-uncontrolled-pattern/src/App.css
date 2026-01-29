@@ -1,8 +1,12 @@
+body {
+  background-color: #242424;
+}
 #root {
-  max-width: 1280px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #242424;
 }
 
 .logo {
@@ -39,4 +43,29 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.controlled {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  input {
+    height: 3rem;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    padding-left: 4px;
+    width: 100%;
+
+    &:focus {
+      border: 5px solid lightskyblue;
+    }
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
