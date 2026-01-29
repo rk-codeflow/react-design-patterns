@@ -63,6 +63,7 @@ const Controlled = () => {
 
   return (
     <form className="controlled" onSubmit={handleSubmit}>
+      <h2>Controlled Approach</h2>
       <input
         type="text"
         name="firstName"
