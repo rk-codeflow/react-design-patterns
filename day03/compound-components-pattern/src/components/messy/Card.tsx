@@ -1,3 +1,5 @@
+import type React from "react";
+
 interface CardProps {
   imageSrc: string;
   title: string;
@@ -6,43 +8,46 @@ interface CardProps {
   upvote: number;
   comments: number;
   reviews: number;
+  primaryAction: React.ReactElement;
 }
 const Card = ({
   imageSrc,
   title,
   subtitle,
-  status,
   upvote,
   comments,
   reviews,
+  primaryAction,
 }: CardProps) => {
   return (
     <div className="card-wrapper">
       <div className="card-header">
-        <img src={imageSrc} alt="card image" height={80} width={80} />
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <h5>{title}</h5>
-          <p>{subtitle}</p>
-          <button>{status}</button>
-        </div>
+        <h5>{title}</h5>
+        <p>{subtitle}</p>
       </div>
 
       <div className="card-body">
-        <div>
-          <h3>{upvote}</h3>
-          <p>Upvotes</p>
-        </div>
+        <img src={imageSrc} alt="card image" />
 
-        <div>
-          <h3>{comments}</h3>
-          <p>Comments</p>
-        </div>
+        <div className="content">
+          <div>
+            <h3>{upvote}</h3>
+            <p>Upvotes</p>
+          </div>
 
-        <div>
-          <h3>{reviews}</h3>
-          <p>reviews</p>
+          <div>
+            <h3>{comments}</h3>
+            <p>Comments</p>
+          </div>
+
+          <div>
+            <h3>{reviews}</h3>
+            <p>reviews</p>
+          </div>
         </div>
       </div>
+
+      <div className="card-footer">{primaryAction}</div>
     </div>
   );
 };

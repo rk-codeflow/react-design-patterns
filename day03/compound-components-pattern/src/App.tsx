@@ -12,6 +12,7 @@ function App() {
         upvote={10}
         comments={20}
         reviews={6}
+        primaryAction={<button>Live Now</button>}
       />
     </>
   );
