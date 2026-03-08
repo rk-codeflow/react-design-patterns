@@ -45,8 +45,18 @@
   }
 }
 
+img {
+  max-width: 100%;
+}
+
 button {
   color: white;
   background-color: lightskyblue;
   width: 100%;
+  border: none;
+
+  &:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
 }
