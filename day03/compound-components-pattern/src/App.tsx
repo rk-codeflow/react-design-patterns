@@ -1,5 +1,4 @@
 import "./App.css";
-import Tab from "./components/messy/Tab";
 import Card from "./components/pattern/Card";
 // import Card from "./components/messy/Card";
 
@@ -42,7 +41,6 @@ function App() {
         </Card.Footer>
       </Card>
 
-      <Tab />
     </div>
   );
 }
