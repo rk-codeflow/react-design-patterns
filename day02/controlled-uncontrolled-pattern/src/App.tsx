@@ -1,4 +1,3 @@
-import "./App.css";
 import Controlled from "./components/Controlled";
 import Uncontrolled from "./components/Uncontrolled";
 import UncontrolledNoRef from "./components/UncontrolledNoRef";
