@@ -1,11 +1,22 @@
 import "./App.css";
-import Toggle from "./components/messy/Toggle";
+import Toggle from "./components/pattern/Toggle";
+// import Toggle from "./components/messy/Toggle";
 
 function App() {
   return (
     <>
-      <h2>Render props pattern</h2>
-      <Toggle />
+      {/* <Toggle /> */}
+
+      <Toggle
+        render={({ isOpen, toggle }) => (
+          <div>
+            <button onClick={toggle} aria-expanded={isOpen}>
+              {isOpen ? "Hide" : "Show me"} the full content
+            </button>
+            {isOpen && <p>I am the full content</p>}
+          </div>
+        )}
+      />
     </>
   );
 }
