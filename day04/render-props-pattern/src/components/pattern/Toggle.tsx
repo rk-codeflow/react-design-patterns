@@ -11,7 +11,7 @@ const Toggle = ({ render }: ToggleProps) => {
     setIsOpen((prev) => !prev);
   };
 
-  return <div>{render({ isOpen, toggle })}</div>;
+  return <>{render({ isOpen, toggle })}</>;
 };
 
 export default Toggle;
