@@ -23,3 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 .DS_Store
+day04/render-props-pattern/.vite/deps/_metadata.json
