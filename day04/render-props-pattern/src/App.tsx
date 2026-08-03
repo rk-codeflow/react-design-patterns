@@ -1,4 +1,5 @@
 import "./App.css";
+import ToggleWithChildren from "./components/children/ToggleWithChildren";
 import Toggle from "./components/pattern/Toggle";
 // import Toggle from "./components/messy/Toggle";
 
@@ -71,6 +72,28 @@ function App() {
             </section>
           )}
         />
+
+        <ToggleWithChildren>
+          {({ isOpen, toggle }) => (
+            <section className="children-toggle" aria-labelledby="children-title">
+              <h2 id="children-title">Simple children toggle</h2>
+              <button
+                className="children-toggle__button"
+                onClick={toggle}
+                type="button"
+                aria-expanded={isOpen}
+              >
+                {isOpen ? "Hide message" : "Show message"}
+              </button>
+
+              {isOpen && (
+                <p className="children-toggle__message">
+                  This UI is rendered through ToggleWithChildren.
+                </p>
+              )}
+            </section>
+          )}
+        </ToggleWithChildren>
       </div>
     </main>
   );
