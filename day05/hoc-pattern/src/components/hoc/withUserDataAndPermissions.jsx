@@ -30,8 +30,21 @@ const withUserDataAndPermissions = (WrappedComponent, requiredPermission) => {
       fetchUserData();
     }, []);
 
-    if (loading) return <p>Loading user data...</p>;
-    if (error) return <p>Error: {error}</p>;
+    if (loading) {
+      return (
+        <div className="data-state" role="status">
+          Loading user data…
+        </div>
+      );
+    }
+
+    if (error) {
+      return (
+        <div className="data-state data-state--error" role="alert">
+          Error: {error}
+        </div>
+      );
+    }
 
     let hasPermission = true;
 
@@ -42,8 +55,6 @@ const withUserDataAndPermissions = (WrappedComponent, requiredPermission) => {
     if (requiredPermission === "report") {
       hasPermission = user.permissions.includes("report");
     }
-
-    console.log({ hasPermission });
 
     return (
       <WrappedComponent user={user} hasPermission={hasPermission} {...props} />
